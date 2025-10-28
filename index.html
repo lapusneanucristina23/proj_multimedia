@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Public Transport Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <h1 class="brand">🚌 Public Transport Planner</h1>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <aside class="panel">
+      <form id="trip-form">
+        <h2 class="panel-title">Plan your trip</h2>
+
+        <label class="field">
+          <span>De la</span>
+          <input id="from" type="text" placeholder="Your location" />
+        </label>
+
+        <label class="field">
+          <span>Până la</span>
+          <input id="to" type="text" placeholder="Destination" />
+        </label>
+
+        <label class="field">
+          <span>When</span>
+          <input id="when" type="datetime-local" />
+        </label>
+
+        <details class="filters">
+          <summary>Filters (optional)</summary>
+          <div class="filters-grid">
+            <label><input type="checkbox" value="bus" checked /> Bus</label>
+            <label><input type="checkbox" value="tram" checked /> Tram</label>
+            <label><input type="checkbox" value="metro" checked /> Subway</label>
+          </div>
+        </details>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Search routes</button>
+          <button class="btn" type="reset">Reset</button>
+        </div>
+      </form>
+
+      <section class="side-section">
+          <h3 class="side-title">Nearby stations</h3>
+        <ul class="list">
+          <li class="stop">
+            <span class="dot">•</span>
+            <div>
+              <strong>Universitate</strong>
+              <div class="muted">~250 m</div>
+            </div>
+          </li>
+          <li class="stop">
+            <span class="dot">•</span>
+            <div>
+              <strong>Rosetti</strong>
+              <div class="muted">~380 m</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </aside>
+
+   
+    <section class="main">
+      <div class="map" aria-label="Map">
+        <p class="map-text">your map will show up here</p>
+      </div>
+
+      <section class="results">
+        <div class="results-top">
+          <h2>Sugested routes</h2>
+          <label class="sort">
+            Sortează
+            <select id="sort">
+              <option value="best">Implicit</option>
+              <option value="fastest">Fastest</option>
+              <option value="fewest">Shortest</option>
+            </select>
+          </label>
+        </div>
+
+        <ul class="cards">
+            <li class="card">
+                <div class="card-row">
+                    <strong>32 min</strong>
+                    <span class="muted">• 1 transfer</span>
+                </div>
+                <ol class="steps">
+                    <li>🚶 Walk 4 min to “Universitate”.</li>
+                    <li>🚌 Bus 381 — 6 stops (14:12 → 14:26).</li>
+                    <li>🚶 Walk 2 min to destination.</li>
+                </ol>
+                <div class="card-actions">
+                    <button class="btn">Details</button>
+                    <button class="btn btn-primary">Start</button>
+                </div>
+            </li>
+
+
+            <li class="card">
+                <div class="card-row">
+                    <strong>28 min</strong>
+                    <span class="muted">• 0 transfers</span>
+                </div>
+                <ol class="steps">
+                    <li>🚶 Walk 3 min to “Rosetti”.</li>
+                    <li>🚋 Tram 21 — 5 stops (14:10 → 14:25).</li>
+                </ol>
+                <div class="card-actions">
+                    <button class="btn">Details</button>
+                    <button class="btn btn-primary">Start</button>
+                </div>
+            </li>
+
+        </ul>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
