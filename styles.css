@@ -113,3 +113,11 @@ input:focus, select:focus { outline: 2px solid var(--pink-500); outline-offset: 
   .layout { grid-template-columns: 1fr; }
   .map { height: 260px; }
 }
+
+.audio-controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  align-items:center;
+}
+
