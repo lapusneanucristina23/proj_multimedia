@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function startCamera() {
     try {
-      // IMPORTANT: camera works only on HTTPS or localhost
       stream = await navigator.mediaDevices.getUserMedia({
         video: { width: { ideal: 1280 }, height: { ideal: 720 } },
         audio: true
@@ -107,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (downloadLink) {
         downloadLink.href = url;
-        // keep extension webm (Chrome/Edge friendly)
         downloadLink.download = "recording.webm";
       }
       setDownloadEnabled(true);
@@ -124,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
       recStopBtn.disabled = true;
     };
 
-    recorder.start(); // no timeslice needed
+    recorder.start();
   }
 
   function stopRecording() {
@@ -141,3 +139,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("beforeunload", stopCamera);
 });
+
